@@ -151,6 +151,21 @@ templ Index(title string) {
 					</a>
 				</div>
 			</section>
+			<section id="alert" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Alert</h3>
+				<div class="flex gap-3 flex-wrap">
+					@ui.Alert(ui.AlertProps{
+						Title:   "Alert",
+						Variant: "default",
+						Message: "Message",
+					})
+					@ui.Alert(ui.AlertProps{
+						Title:   "Alert",
+						Variant: "destructive",
+						Message: "Message",
+					})
+				</div>
+			</section>
 		</div>
 	}
 }
