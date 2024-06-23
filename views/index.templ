@@ -1,156 +1,156 @@
 package views
 
 import (
-  "github.com/zeindevs/goshadcn/ui"
+	"github.com/zeindevs/goshadcn/ui"
 )
 
 templ Index(title string) {
-  @Layout(title) {
-    <header class="py-20">
-      <div class="container max-w-5xl px-8 text-center flex flex-col gap-5">
-        <h1 class="text-3xl lg:text-4xl font-bold">{title}</h1>
-        <p class="text-base lg:text-lg text-muted-foreground">shadcn/ui components in golang templ</p>
-      </div>
-    </header>
-    <div class="py-12 space-y-5 px-5">
-      <section id="button" class="container max-w-7xl space-y-3">
-        <h3 class="text-xl font-medium">Button</h3>
-         <div class="flex gap-3 flex-wrap">
-          <button {ui.Button(ui.ButtonVariant("primary", "sm"), ui.Class("w-fit"))...}>
-              Primary Small
-          </button>
-          <button {ui.Button(ui.ButtonVariant("secondary", "sm"), ui.Class("w-fit"))...}>
-              Secondary Small
-          </button>
-          <button {ui.Button(ui.ButtonVariant("destructive", "sm"), ui.Class("w-fit"))...}>
-              Destructive Small
-          </button>
-          <button {ui.Button(ui.ButtonVariant("outline", "sm"), ui.Class("w-fit"))...}>
-              Outline Small
-          </button>
-          <button {ui.Button(ui.ButtonVariant("ghost", "sm"), ui.Class("w-fit"))...}>
-              Ghost Small
-          </button>
-          <a href="#button" {ui.Button(ui.ButtonVariant("link", "sm"), ui.Class("w-fit"))...}>
-              Link Small
-          </a>
-        </div>
-        <div class="flex gap-3 flex-wrap">
-          <button {ui.Button(ui.Class("w-fit"))...}>
-              Primary
-          </button>
-          <button {ui.Button(ui.ButtonVariant("secondary"), ui.Class("w-fit"))...}>
-              Secondary
-          </button>
-          <button {ui.Button(ui.ButtonVariant("destructive"), ui.Class("w-fit"))...}>
-              Destructive
-          </button>
-          <button {ui.Button(ui.ButtonVariant("outline"), ui.Class("w-fit"))...}>
-              Outline
-          </button>
-          <button {ui.Button(ui.ButtonVariant("ghost"), ui.Class("w-fit"))...}>
-              Ghost
-          </button>
-          <a href="#button" {ui.Button(ui.ButtonVariant("link"), ui.Class("w-fit"))...}>
-              Link
-          </a>
-        </div>
-        <div class="flex gap-3 flex-wrap">
-          <button {ui.Button(ui.ButtonVariant("primary", "lg"), ui.Class("w-fit"))...}>
-              Primary Large
-          </button>
-          <button {ui.Button(ui.ButtonVariant("secondary", "lg"), ui.Class("w-fit"))...}>
-              Secondary Large
-          </button>
-          <button {ui.Button(ui.ButtonVariant("destructive", "lg"), ui.Class("w-fit"))...}>
-              Destructive Large
-          </button>
-          <button {ui.Button(ui.ButtonVariant("outline", "lg"), ui.Class("w-fit"))...}>
-              Outline Large
-          </button>
-          <button {ui.Button(ui.ButtonVariant("ghost", "lg"), ui.Class("w-fit"))...}>
-              Ghost Large
-          </button>
-          <a href="#button" {ui.Button(ui.ButtonVariant("link", "lg"), ui.Class("w-fit"))...}>
-              Link Large
-          </a>
-        </div>
-      </section>
-      <section id="button-icon" class="container max-w-7xl space-y-3">
-        <h3 class="text-xl font-medium">Button Icon</h3>
-        <div class="flex gap-3 flex-wrap">
-          <button {ui.Button(ui.ButtonVariant("primary", "icon"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("h-5 w-5")
-          </button>
-          <button {ui.Button(ui.ButtonVariant("secondary", "icon"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("h-5 w-5")
-          </button>
-          <button {ui.Button(ui.ButtonVariant("destructive", "icon"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("h-5 w-5")
-          </button>
-          <button {ui.Button(ui.ButtonVariant("outline", "icon"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("h-5 w-5")
-          </button>
-          <button {ui.Button(ui.ButtonVariant("ghost", "icon"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("h-5 w-5")
-          </button>
-          <a href="#button-icon" {ui.Button(ui.ButtonVariant("link", "icon"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("h-5 w-5")
-          </a>
-        </div>
-        <div class="flex gap-3 flex-wrap">
-          <button {ui.Button(ui.ButtonVariant("primary"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("mr-2 h-5 w-5")
-              Primary With Icon
-          </button>
-          <button {ui.Button(ui.ButtonVariant("secondary"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("mr-2 h-5 w-5")
-              Secondary With Icon
-          </button>
-          <button {ui.Button(ui.ButtonVariant("destructive"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("mr-2 h-5 w-5")
-              Destructive With Icon
-          </button>
-          <button {ui.Button(ui.ButtonVariant("outline"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("mr-2 h-5 w-5")
-              Outline With Icon
-          </button>
-          <button {ui.Button(ui.ButtonVariant("ghost"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("mr-2 h-5 w-5")
-              Ghost With Icon
-          </button>
-          <a href="#button-icon" {ui.Button(ui.ButtonVariant("link"), ui.Class("w-fit"))...}>
-              @ui.IconMoon("mr-2 h-5 w-5")
-              Link With Icon
-          </a>
-        </div>
-        <div class="flex gap-3 flex-wrap">
-          <button disabled {ui.Button(ui.ButtonVariant("primary"), ui.Class("w-fit"))...}>
-              @ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
-              Primary With Loading
-          </button>
-          <button disabled {ui.Button(ui.ButtonVariant("secondary"), ui.Class("w-fit"))...}>
-              @ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
-              Secondary With Loading
-          </button>
-          <button disabled {ui.Button(ui.ButtonVariant("destructive"), ui.Class("w-fit"))...}>
-              @ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
-              Destructive With Loading
-          </button>
-          <button disabled {ui.Button(ui.ButtonVariant("outline"), ui.Class("w-fit"))...}>
-              @ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
-              Outline With Loading
-          </button>
-          <button disabled {ui.Button(ui.ButtonVariant("ghost"), ui.Class("w-fit"))...}>
-              @ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
-              Ghost With Loading
-          </button>
-          <a data-disabled="true" href="#button-icon" {ui.Button(ui.ButtonVariant("link"), ui.Class("w-fit"))...}>
-              @ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
-              Link With Loading
-          </a>
-        </div>
-      </section>
-    </div>
-  }
+	@Layout(title) {
+		<header class="py-20">
+			<div class="container max-w-5xl px-8 text-center flex flex-col gap-5">
+				<h1 class="text-3xl lg:text-4xl font-bold">{ title }</h1>
+				<p class="text-base lg:text-lg text-muted-foreground">shadcn/ui components in golang templ</p>
+			</div>
+		</header>
+		<div class="py-12 space-y-5 px-5">
+			<section id="button" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Button</h3>
+				<div class="flex gap-3 flex-wrap">
+					<button { ui.Button(ui.ButtonVariant("primary", "sm"), ui.Class("w-fit"))... }>
+						Primary Small
+					</button>
+					<button { ui.Button(ui.ButtonVariant("secondary", "sm"), ui.Class("w-fit"))... }>
+						Secondary Small
+					</button>
+					<button { ui.Button(ui.ButtonVariant("destructive", "sm"), ui.Class("w-fit"))... }>
+						Destructive Small
+					</button>
+					<button { ui.Button(ui.ButtonVariant("outline", "sm"), ui.Class("w-fit"))... }>
+						Outline Small
+					</button>
+					<button { ui.Button(ui.ButtonVariant("ghost", "sm"), ui.Class("w-fit"))... }>
+						Ghost Small
+					</button>
+					<a href="#button" { ui.Button(ui.ButtonVariant("link", "sm"), ui.Class("w-fit"))... }>
+						Link Small
+					</a>
+				</div>
+				<div class="flex gap-3 flex-wrap">
+					<button { ui.Button(ui.Class("w-fit"))... }>
+						Primary
+					</button>
+					<button { ui.Button(ui.ButtonVariant("secondary"), ui.Class("w-fit"))... }>
+						Secondary
+					</button>
+					<button { ui.Button(ui.ButtonVariant("destructive"), ui.Class("w-fit"))... }>
+						Destructive
+					</button>
+					<button { ui.Button(ui.ButtonVariant("outline"), ui.Class("w-fit"))... }>
+						Outline
+					</button>
+					<button { ui.Button(ui.ButtonVariant("ghost"), ui.Class("w-fit"))... }>
+						Ghost
+					</button>
+					<a href="#button" { ui.Button(ui.ButtonVariant("link"), ui.Class("w-fit"))... }>
+						Link
+					</a>
+				</div>
+				<div class="flex gap-3 flex-wrap">
+					<button { ui.Button(ui.ButtonVariant("primary", "lg"), ui.Class("w-fit"))... }>
+						Primary Large
+					</button>
+					<button { ui.Button(ui.ButtonVariant("secondary", "lg"), ui.Class("w-fit"))... }>
+						Secondary Large
+					</button>
+					<button { ui.Button(ui.ButtonVariant("destructive", "lg"), ui.Class("w-fit"))... }>
+						Destructive Large
+					</button>
+					<button { ui.Button(ui.ButtonVariant("outline", "lg"), ui.Class("w-fit"))... }>
+						Outline Large
+					</button>
+					<button { ui.Button(ui.ButtonVariant("ghost", "lg"), ui.Class("w-fit"))... }>
+						Ghost Large
+					</button>
+					<a href="#button" { ui.Button(ui.ButtonVariant("link", "lg"), ui.Class("w-fit"))... }>
+						Link Large
+					</a>
+				</div>
+			</section>
+			<section id="button-icon" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Button Icon</h3>
+				<div class="flex gap-3 flex-wrap">
+					<button { ui.Button(ui.ButtonVariant("primary", "icon"))... }>
+						@ui.IconMoon("h-5 w-5")
+					</button>
+					<button { ui.Button(ui.ButtonVariant("secondary", "icon"))... }>
+						@ui.IconMoon("h-5 w-5")
+					</button>
+					<button { ui.Button(ui.ButtonVariant("destructive", "icon"))... }>
+						@ui.IconMoon("h-5 w-5")
+					</button>
+					<button { ui.Button(ui.ButtonVariant("outline", "icon"))... }>
+						@ui.IconMoon("h-5 w-5")
+					</button>
+					<button { ui.Button(ui.ButtonVariant("ghost", "icon"))... }>
+						@ui.IconMoon("h-5 w-5")
+					</button>
+					<a href="#button-icon" { ui.Button(ui.ButtonVariant("link", "icon"))... }>
+						@ui.IconMoon("h-5 w-5")
+					</a>
+				</div>
+				<div class="flex gap-3 flex-wrap">
+					<button { ui.Button(ui.ButtonVariant("primary"), ui.Class("w-fit"))... }>
+						@ui.IconMoon("mr-2 h-5 w-5")
+						Primary With Icon
+					</button>
+					<button { ui.Button(ui.ButtonVariant("secondary"), ui.Class("w-fit"))... }>
+						@ui.IconMoon("mr-2 h-5 w-5")
+						Secondary With Icon
+					</button>
+					<button { ui.Button(ui.ButtonVariant("destructive"), ui.Class("w-fit"))... }>
+						@ui.IconMoon("mr-2 h-5 w-5")
+						Destructive With Icon
+					</button>
+					<button { ui.Button(ui.ButtonVariant("outline"), ui.Class("w-fit"))... }>
+						@ui.IconMoon("mr-2 h-5 w-5")
+						Outline With Icon
+					</button>
+					<button { ui.Button(ui.ButtonVariant("ghost"), ui.Class("w-fit"))... }>
+						@ui.IconMoon("mr-2 h-5 w-5")
+						Ghost With Icon
+					</button>
+					<a href="#button-icon" { ui.Button(ui.ButtonVariant("link"), ui.Class("w-fit"))... }>
+						@ui.IconMoon("mr-2 h-5 w-5")
+						Link With Icon
+					</a>
+				</div>
+				<div class="flex gap-3 flex-wrap">
+					<button disabled { ui.Button(ui.ButtonVariant("primary"), ui.Class("w-fit"))... }>
+						@ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
+						Primary With Loading
+					</button>
+					<button disabled { ui.Button(ui.ButtonVariant("secondary"), ui.Class("w-fit"))... }>
+						@ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
+						Secondary With Loading
+					</button>
+					<button disabled { ui.Button(ui.ButtonVariant("destructive"), ui.Class("w-fit"))... }>
+						@ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
+						Destructive With Loading
+					</button>
+					<button disabled { ui.Button(ui.ButtonVariant("outline"), ui.Class("w-fit"))... }>
+						@ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
+						Outline With Loading
+					</button>
+					<button disabled { ui.Button(ui.ButtonVariant("ghost"), ui.Class("w-fit"))... }>
+						@ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
+						Ghost With Loading
+					</button>
+					<a data-disabled="true" href="#button-icon" { ui.Button(ui.ButtonVariant("link"), ui.Class("w-fit"))... }>
+						@ui.IconRotateCW("mr-2 h-5 w-5 animate-spins")
+						Link With Loading
+					</a>
+				</div>
+			</section>
+		</div>
+	}
 }

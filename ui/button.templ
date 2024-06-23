@@ -14,9 +14,9 @@ const (
 
 const (
 	classButtonSizeDefault = "h-9 px-4 py-2"
-	classButtonSizeSmall	 = "h-8 rounded-md px-3 text-xs"
-	classButtonSizeLarge 	 = "h-10 rounded-md px-8"
-	classButtonSizeIcon 	 = "h-9 w-9"
+	classButtonSizeSmall   = "h-8 rounded-md px-3 text-xs"
+	classButtonSizeLarge   = "h-10 rounded-md px-8"
+	classButtonSizeIcon    = "h-9 w-9"
 )
 
 func Button(opts ...func(*templ.Attributes)) templ.Attributes {
@@ -29,7 +29,7 @@ func Button(opts ...func(*templ.Attributes)) templ.Attributes {
 	return attrs
 }
 
-func ButtonVariant(v string, s... string) func(*templ.Attributes) {
+func ButtonVariant(v string, s ...string) func(*templ.Attributes) {
 	return func(attrs *templ.Attributes) {
 		btnsize := classButtonSizeDefault
 		for _, bs := range s {
