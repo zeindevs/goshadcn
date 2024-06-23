@@ -1,0 +1,9 @@
+package ui
+
+func Class(v string) func(*templ.Attributes) {
+	return func(attrs *templ.Attributes) {
+		attr := *attrs
+		class := attr["class"].(string) + " " + v
+		attr["class"] = class
+	}
+}

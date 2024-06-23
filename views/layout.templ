@@ -1,0 +1,21 @@
+package views
+
+import (
+  "github.com/zeindevs/goshadcn/partials"
+)
+
+templ Layout(title string) {
+  <!DOCTYPE html>
+  <html lang="en" x-cloak x-data="{theme: localStorage.getItem('theme') || localStorage.setItem('theme', 'light')}" x-init="$watch('theme', val => localStorage.setItem('theme', val))" x-bind:class="{'dark': theme === 'dark' && window.matchMedia('(prefers-color-scheme: dark)').matches}">
+  <head>
+    @partials.Head(title)
+  </head>
+  <body class="flex flex-col overflow-auto">
+    @partials.Navbar(title)
+    <main>
+      { children... }
+    </main>
+    @partials.Footer(title)
+  </body>
+  </html>
+}
