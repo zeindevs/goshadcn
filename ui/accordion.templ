@@ -1,0 +1,50 @@
+package ui
+
+const (
+	classAccordionItem    = "border-b"
+	classAccordionHeader  = "flex"
+	classAccordionTrigger = "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline"
+	classAccordionChevron = "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200"
+	classAccordionContent = "text-sm"
+	classAccordionBody    = "pb-4 pt-0"
+)
+
+templ Accordion() {
+	<div
+		x-data="{ 
+      activeAccordion: '', 
+      setActiveAccordion(id) { 
+          this.activeAccordion = (this.activeAccordion == id) ? '' : id 
+      } 
+    }"
+	>
+		{ children... }
+	</div>
+}
+
+templ AccordionItem() {
+	<div x-data="{ id: $id('accordion') }" class={ classAccordionItem }>
+		{ children... }
+	</div>
+}
+
+templ AccordionHeader() {
+	<div class={ classAccordionHeader }>
+		{ children... }
+	</div>
+}
+
+templ AccordionTrigger() {
+	<button class={ classAccordionTrigger } :class="{'[&>svg]:rotate-180': activeAccordion==id}" @click="setActiveAccordion(id)">
+		{ children... }
+		@IconChevronDown(classAccordionChevron)
+	</button>
+}
+
+templ AccordionContent() {
+	<div x-show="activeAccordion==id" x-collapse x-cloak class={ classAccordionContent }>
+		<div class={ classAccordionBody }>
+			{ children... }
+		</div>
+	</div>
+}
