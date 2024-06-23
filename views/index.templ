@@ -170,6 +170,15 @@ templ Index(title string) {
 					</div>
 				</div>
 			</section>
+			<section id="badge" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Badge</h3>
+				<div class="flex gap-3 flex-wrap">
+					<span { ui.Badge(ui.BadgeVariant("primary"))... }>Primary</span>
+					<span { ui.Badge(ui.BadgeVariant("secondary"))... }>Secondary</span>
+					<span { ui.Badge(ui.BadgeVariant("destructive"))... }>Destructive</span>
+					<span { ui.Badge(ui.BadgeVariant("outline"))... }>Outline</span>
+				</div>
+			</section>
 		</div>
 	}
 }
