@@ -183,35 +183,23 @@ templ Index(title string) {
 				<h3 class="text-xl font-medium">Accordion</h3>
 				<div class="">
 					@ui.Accordion() {
-						@ui.AccordionItem() {
-							@ui.AccordionHeader() {
-								@ui.AccordionTrigger() {
-									<span>Is it accessible?</span>
-								}
-							}
-							@ui.AccordionContent() {
-								<p>Yes. It adheres to the WAI-ARIA design pattern.</p>
-							}
+						@ui.AccordionItem(ui.AccordionItemProps{
+							Title:       "s it accessible?",
+							TriggerIcon: ui.IconChevronDown,
+						}) {
+							<p>"Yes. It adheres to the WAI-ARIA design pattern."</p>
 						}
-						@ui.AccordionItem() {
-							@ui.AccordionHeader() {
-								@ui.AccordionTrigger() {
-									<span>Is it styled?</span>
-								}
-							}
-							@ui.AccordionContent() {
-								<p>Yes. It comes with default styles that matches the other components' aesthetic.</p>
-							}
+						@ui.AccordionItem(ui.AccordionItemProps{
+							Title:       "Is it animated?",
+							TriggerIcon: ui.IconChevronDown,
+						}) {
+							<p>"Yes. It's animated by default, but you can disable it if you prefer."</p>
 						}
-						@ui.AccordionItem() {
-							@ui.AccordionHeader() {
-								@ui.AccordionTrigger() {
-									<span>Is it animated?</span>
-								}
-							}
-							@ui.AccordionContent() {
-								<p>Yes. It's animated by default, but you can disable it if you prefer.</p>
-							}
+						@ui.AccordionItem(ui.AccordionItemProps{
+							Title:       "Is it styled?",
+							TriggerIcon: ui.IconChevronDown,
+						}) {
+							<p>"Yes. It comes with default styles that matches the other components' aesthetic."</p>
 						}
 					}
 				</div>

@@ -9,6 +9,11 @@ const (
 	classAccordionBody    = "pb-4 pt-0"
 )
 
+type AccordionItemProps struct {
+	Title       string
+	TriggerIcon func(class string) templ.Component
+}
+
 templ Accordion() {
 	<div
 		x-data="{ 
@@ -22,29 +27,18 @@ templ Accordion() {
 	</div>
 }
 
-templ AccordionItem() {
+templ AccordionItem(props AccordionItemProps) {
 	<div x-data="{ id: $id('accordion') }" class={ classAccordionItem }>
-		{ children... }
-	</div>
-}
-
-templ AccordionHeader() {
-	<div class={ classAccordionHeader }>
-		{ children... }
-	</div>
-}
-
-templ AccordionTrigger() {
-	<button class={ classAccordionTrigger } :class="{'[&>svg]:rotate-180': activeAccordion==id}" @click="setActiveAccordion(id)">
-		{ children... }
-		@IconChevronDown(classAccordionChevron)
-	</button>
-}
-
-templ AccordionContent() {
-	<div x-show="activeAccordion==id" x-collapse x-cloak class={ classAccordionContent }>
-		<div class={ classAccordionBody }>
-			{ children... }
+		<div class={ classAccordionHeader }>
+			<button class={ classAccordionTrigger } :class="{'[&>svg]:rotate-180': activeAccordion==id}" @click="setActiveAccordion(id)">
+				{ props.Title }
+				@props.TriggerIcon(classAccordionChevron)
+			</button>
+		</div>
+		<div x-show="activeAccordion==id" x-collapse x-cloak class={ classAccordionContent }>
+			<div class={ classAccordionBody }>
+				{ children... }
+			</div>
 		</div>
 	</div>
 }
