@@ -10,13 +10,13 @@ import "github.com/a-h/templ"
 const classButton = "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[disabled=true]:opacity-50"
 
 const (
-	classButtonVariantDefault     = "bg-primary text-primary-foreground shadow hover:bg-primary/90 rounded-md"
-	classButtonVariantDestructive = "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 rounded-md"
-	classButtonVariantSecondary   = "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 rounded-md"
-	classButtonVariantOutline     = "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md"
-	classButtonVariantGhost       = "hover:bg-accent hover:text-accent-foreground rounded-md"
-	classButtonVariantLink        = "text-primary underline-offset-4 hover:underline rounded-md"
-	classButtonVariantIcon        = "hover:bg-accent rounded-md"
+	classButtonDefault     = "bg-primary text-primary-foreground shadow hover:bg-primary/90 rounded-md"
+	classButtonDestructive = "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 rounded-md"
+	classButtonSecondary   = "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 rounded-md"
+	classButtonOutline     = "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md"
+	classButtonGhost       = "hover:bg-accent hover:text-accent-foreground rounded-md"
+	classButtonLink        = "text-primary underline-offset-4 hover:underline rounded-md"
+	classButtonIcon        = "hover:bg-accent rounded-md"
 )
 
 const (
@@ -28,7 +28,7 @@ const (
 
 func Button(opts ...func(*templ.Attributes)) templ.Attributes {
 	attrs := templ.Attributes{
-		"class": classButton + " " + classButtonSizeDefault + " " + classButtonVariantDefault,
+		"class": classButton + " " + classButtonSizeDefault + " " + classButtonDefault,
 	}
 	for _, o := range opts {
 		o(&attrs)
@@ -56,25 +56,25 @@ func ButtonVariant(v string, s ...string) func(*templ.Attributes) {
 		attr := *attrs
 		switch v {
 		case "primary":
-			attr["class"] = classButton + " " + btnsize + " " + classButtonVariantDefault
+			attr["class"] = classButton + " " + btnsize + " " + classButtonDefault
 			break
 		case "destructive":
-			attr["class"] = classButton + " " + btnsize + " " + classButtonVariantDestructive
+			attr["class"] = classButton + " " + btnsize + " " + classButtonDestructive
 			break
 		case "secondary":
-			attr["class"] = classButton + " " + btnsize + " " + classButtonVariantSecondary
+			attr["class"] = classButton + " " + btnsize + " " + classButtonSecondary
 			break
 		case "ghost":
-			attr["class"] = classButton + " " + btnsize + " " + classButtonVariantGhost
+			attr["class"] = classButton + " " + btnsize + " " + classButtonGhost
 			break
 		case "outline":
-			attr["class"] = classButton + " " + btnsize + " " + classButtonVariantOutline
+			attr["class"] = classButton + " " + btnsize + " " + classButtonOutline
 			break
 		case "link":
-			attr["class"] = classButton + " " + btnsize + " " + classButtonVariantLink
+			attr["class"] = classButton + " " + btnsize + " " + classButtonLink
 			break
 		case "icon":
-			attr["class"] = attr["class"].(string) + " " + btnsize + " " + classButtonVariantIcon
+			attr["class"] = attr["class"].(string) + " " + btnsize + " " + classButtonIcon
 			break
 		}
 	}

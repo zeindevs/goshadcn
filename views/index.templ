@@ -16,26 +16,6 @@ templ Index(title string) {
 			<section id="button" class="container max-w-7xl space-y-3">
 				<h3 class="text-xl font-medium">Button</h3>
 				<div class="flex gap-3 flex-wrap">
-					<button { ui.Button(ui.ButtonVariant("primary", "sm"), ui.Class("w-fit"))... }>
-						Primary Small
-					</button>
-					<button { ui.Button(ui.ButtonVariant("secondary", "sm"), ui.Class("w-fit"))... }>
-						Secondary Small
-					</button>
-					<button { ui.Button(ui.ButtonVariant("destructive", "sm"), ui.Class("w-fit"))... }>
-						Destructive Small
-					</button>
-					<button { ui.Button(ui.ButtonVariant("outline", "sm"), ui.Class("w-fit"))... }>
-						Outline Small
-					</button>
-					<button { ui.Button(ui.ButtonVariant("ghost", "sm"), ui.Class("w-fit"))... }>
-						Ghost Small
-					</button>
-					<a href="#button" { ui.Button(ui.ButtonVariant("link", "sm"), ui.Class("w-fit"))... }>
-						Link Small
-					</a>
-				</div>
-				<div class="flex gap-3 flex-wrap">
 					<button { ui.Button(ui.Class("w-fit"))... }>
 						Primary
 					</button>
@@ -53,6 +33,26 @@ templ Index(title string) {
 					</button>
 					<a href="#button" { ui.Button(ui.ButtonVariant("link"), ui.Class("w-fit"))... }>
 						Link
+					</a>
+				</div>
+				<div class="flex gap-3 flex-wrap">
+					<button { ui.Button(ui.ButtonVariant("primary", "sm"), ui.Class("w-fit"))... }>
+						Primary Small
+					</button>
+					<button { ui.Button(ui.ButtonVariant("secondary", "sm"), ui.Class("w-fit"))... }>
+						Secondary Small
+					</button>
+					<button { ui.Button(ui.ButtonVariant("destructive", "sm"), ui.Class("w-fit"))... }>
+						Destructive Small
+					</button>
+					<button { ui.Button(ui.ButtonVariant("outline", "sm"), ui.Class("w-fit"))... }>
+						Outline Small
+					</button>
+					<button { ui.Button(ui.ButtonVariant("ghost", "sm"), ui.Class("w-fit"))... }>
+						Ghost Small
+					</button>
+					<a href="#button" { ui.Button(ui.ButtonVariant("link", "sm"), ui.Class("w-fit"))... }>
+						Link Small
 					</a>
 				</div>
 				<div class="flex gap-3 flex-wrap">
@@ -153,17 +153,21 @@ templ Index(title string) {
 			</section>
 			<section id="alert" class="container max-w-7xl space-y-3">
 				<h3 class="text-xl font-medium">Alert</h3>
-				<div class="flex gap-3 flex-wrap">
-					@ui.Alert(ui.AlertProps{
-						Title:   "Alert",
-						Variant: "default",
-						Message: "Message",
-					})
-					@ui.Alert(ui.AlertProps{
-						Title:   "Alert",
-						Variant: "destructive",
-						Message: "Message",
-					})
+				<div class="grid gap-3 grid-cols-2">
+					<div>
+						@ui.Alert(ui.AlertProps{
+							Title:   "Alert",
+							Variant: "default",
+							Message: "Message",
+						})
+					</div>
+					<div>
+						@ui.Alert(ui.AlertProps{
+							Title:   "Alert",
+							Variant: "destructive",
+							Message: "Message",
+						})
+					</div>
 				</div>
 			</section>
 		</div>
