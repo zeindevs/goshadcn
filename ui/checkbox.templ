@@ -1,0 +1,20 @@
+package ui
+
+const classCheckbox = "peer h-4 w-4 shrink-0 bg-foreground rounded border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+
+templ Checkbox(id string, disabled bool) {
+	if disabled {
+		<input id={ id } disabled type="checkbox" class={ classCheckbox }/>
+	} else {
+		<input id={ id } type="checkbox" class={ classCheckbox }/>
+	}
+}
+
+templ CheckboxLabel(htmlFor string, text string) {
+	<label
+		for={ htmlFor }
+		class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+	>
+		{ text }
+	</label>
+}
