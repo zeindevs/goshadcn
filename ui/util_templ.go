@@ -14,3 +14,18 @@ func Class(v string) func(*templ.Attributes) {
 		attr["class"] = class
 	}
 }
+
+func IFCN(classNames []string) string {
+	class := ""
+	for _, cn := range classNames {
+		class = class + " " + cn
+	}
+	return class
+}
+
+func IFF(cond bool, value string) string {
+	if cond {
+		return value
+	}
+	return ""
+}

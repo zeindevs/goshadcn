@@ -204,6 +204,30 @@ templ Index(title string) {
 					}
 				</div>
 			</section>
+			<section id="card" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Card</h3>
+				<div class="flex gap-3 flex-wrap">
+					@ui.Card("w-[350px]") {
+						@ui.CardHeader() {
+							<div class="space-y-2">
+								@ui.CardTitle("Create project")
+								@ui.CardDescription("Deploy your new project in one-click.")
+							</div>
+						}
+						@ui.CardBody() {
+							Body
+						}
+						@ui.CardFooter("items-center flex justify-between") {
+							<button { ui.Button(ui.ButtonVariant("outline"), ui.Class("w-fit"))... }>
+								Cancel
+							</button>
+							<button { ui.Button(ui.ButtonVariant("primary"), ui.Class("w-fit"))... }>
+								Deploy
+							</button>
+						}
+					}
+				</div>
+			</section>
 		</div>
 	}
 }

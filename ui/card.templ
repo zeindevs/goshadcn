@@ -1,0 +1,42 @@
+package ui
+
+const (
+	classCard            = "rounded-xl border bg-card text-card-foreground shadow"
+	classCardHeader      = "flex flex-col space-y-1.5 p-6"
+	classCardTitle       = "font-semibold leading-none tracking-tight"
+	classCardDescription = "text-sm text-muted-foreground"
+	classCardBody        = "p-6 pt-0"
+	classCardFooter      = "p-6 pt-0"
+)
+
+templ Card(className ...string) {
+	<div class={ classCard, IFCN(className) }>
+		{ children... }
+	</div>
+}
+
+templ CardHeader(className ...string) {
+	<div class={ classCardHeader, IFCN(className) }>
+		{ children... }
+	</div>
+}
+
+templ CardTitle(title string, className ...string) {
+	<h3 class={ classCardTitle, IFCN(className) }>{ title }</h3>
+}
+
+templ CardDescription(title string, className ...string) {
+	<p class={ classCardDescription, IFCN(className) }>{ title }</p>
+}
+
+templ CardBody(className ...string) {
+	<div class={ classCardBody, IFCN(className) }>
+		{ children... }
+	</div>
+}
+
+templ CardFooter(className ...string) {
+	<div class={ classCardFooter, IFCN(className) }>
+		{ children... }
+	</div>
+}
