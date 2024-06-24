@@ -228,6 +228,26 @@ templ Index(title string) {
 					}
 				</div>
 			</section>
+			<section id="input" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Input</h3>
+				<div class="grid md:grid-cols-2 gap-3">
+					<div class="grid w-full items-center gap-1.5">
+						<input { ui.Input()... } placeholder="Email"/>
+					</div>
+					<div class="flex w-full items-center space-x-2">
+						<input type="email" { ui.Input()... } placeholder="Email"/>
+						<button type="submit" { ui.Button()... }>Subscribe</button>
+					</div>
+					<div class="grid w-full items-center gap-1.5">
+						@ui.Label("email", "Email Address")
+						<input { ui.Input()... } placeholder="Email"/>
+					</div>
+					<div class="grid w-full items-center gap-1.5">
+						@ui.Label("picture", "Picture")
+						<input id="picture" type="file" { ui.Input()... }/>
+					</div>
+				</div>
+			</section>
 		</div>
 	}
 }
