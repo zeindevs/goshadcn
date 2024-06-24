@@ -1,0 +1,16 @@
+package ui
+
+const (
+	classAvatar         = "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
+	classAvatarFallback = "flex h-full w-full items-center justify-center rounded-full bg-muted"
+)
+
+templ Avatar(url, title string) {
+	<div class={ classAvatar }>
+		if url != "" {
+			<image src={url} class="aspect-square h-full w-full"></image>
+		} else {
+			<span class={classAvatarFallback}>{ title }</span>
+		}
+	</div>
+}

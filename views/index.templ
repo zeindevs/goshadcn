@@ -248,6 +248,35 @@ templ Index(title string) {
 					</div>
 				</div>
 			</section>
+			<section id="checkbox" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Checkbox</h3>
+				<div class="grid md:grid-cols-2 gap-3">
+					<div class="flex items-center space-x-2">
+						@ui.Checkbox("terms1", false)
+						@ui.CheckboxLabel("terms1", "Accept terms and conditions")
+					</div>
+					<div class="items-top flex space-x-2">
+						@ui.Checkbox("terms2", false)
+						<div class="grid gap-1.5 leading-none">
+							@ui.CheckboxLabel("terms2", "Accept terms and conditions")
+							<p class="text-sm text-muted-foreground">
+								You agree to our Terms of Service and Privacy Policy.
+							</p>
+						</div>
+					</div>
+					<div class="flex items-center space-x-2">
+						@ui.Checkbox("terms3", true)
+						@ui.CheckboxLabel("terms3", "Accept terms and conditions")
+					</div>
+				</div>
+			</section>
+			<section id="avatar" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Avatar</h3>
+				<div class="flex gap-3">
+					@ui.Avatar("", "CN")
+					@ui.Avatar("/static/avatar.jpeg", "CN")
+				</div>
+			</section>
 		</div>
 	}
 }
