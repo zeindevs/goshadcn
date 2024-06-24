@@ -277,6 +277,21 @@ templ Index(title string) {
 					@ui.Avatar("/static/avatar.jpeg", "CN")
 				</div>
 			</section>
+			<section id="textarea" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Textarea</h3>
+				<div class="flex flex-col gap-3">
+					<div class="grid w-full gap-1.5">
+						<textarea id="textarea1" { ui.Textarea()... } placeholder="Type your message here."></textarea>
+					</div>
+					<div class="grid w-full gap-1.5">
+						@ui.Label("textarea2", "Your Message")
+						<textarea id="textarea2" { ui.Textarea()... } placeholder="Type your message here."></textarea>
+						<p class="text-sm text-muted-foreground">
+							Your message will be copied to the support team.
+						</p>
+					</div>
+				</div>
+			</section>
 		</div>
 	}
 }
