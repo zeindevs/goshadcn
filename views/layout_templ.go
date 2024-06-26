@@ -11,7 +11,7 @@ import "io"
 import "bytes"
 
 import (
-	"github.com/zeindevs/goshadcn/partials"
+	"github.com/zeindevs/goshadcn/views/partials"
 )
 
 func Layout(title string) templ.Component {

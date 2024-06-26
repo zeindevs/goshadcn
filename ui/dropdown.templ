@@ -1,0 +1,86 @@
+package ui
+
+const (
+	classDropdown             = "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 w-56"
+	classDropdownLabel        = "px-2 py-1.5 text-sm font-semibold"
+	classDropdownItem         = "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 w-full"
+	classDropdownSeparator    = "-mx-1 my-1 h-px bg-muted"
+	classDropdownChevronRight = "ml-auto h-4 w-4"
+	classDropdownShortcut     = "ml-auto text-xs tracking-widest opacity-60"
+)
+
+type DropdownProps struct {
+	Side string
+}
+
+templ Dropdown() {
+	<div
+		x-data="{
+        dropdownOpen: false
+    }"
+		class="relative w-fit"
+	>
+		{ children... }
+	</div>
+}
+
+func dropdownSide(side string) string {
+	switch side {
+	case "left":
+		return "absolute top-0 left-0 -translate-y-full"
+	case "right":
+		return "absolute top-0 right-0 -translate-y-full"
+	case "topleft":
+		return "absolute bottom-0 left-0 translate-y-full"
+	case "topright":
+		return "absolute bottom-0 right-0 translate-y-full"
+	default:
+		return "absolute top-0 left-0 -translate-y-full"
+	}
+}
+
+templ DropdownContent(props DropdownProps) {
+	<div
+		x-show="dropdownOpen"
+		@click.away="dropdownOpen=false"
+		x-transition:enter="ease-out duration-200"
+		x-cloak
+		:data-state="dropdownOpen ? 'open' : 'closed'"
+		data-side={ props.Side }
+		class={ dropdownSide(props.Side),classDropdown }
+	>
+		{ children... }
+	</div>
+}
+
+func DropdownLabel(opts ...func(*templ.Attributes)) templ.Attributes {
+	attrs := templ.Attributes{
+		"class": classDropdownLabel,
+	}
+	for _, o := range opts {
+		o(&attrs)
+	}
+	return attrs
+}
+
+func DropdownItem(opts ...func(*templ.Attributes)) templ.Attributes {
+	attrs := templ.Attributes{
+		"class": classDropdownItem,
+	}
+	for _, o := range opts {
+		o(&attrs)
+	}
+	return attrs
+}
+
+templ DropdownSeparator() {
+	<div class={ classDropdownSeparator }></div>
+}
+
+templ DropdownShortcut(title string) {
+	<span class={ classDropdownShortcut }>{ title }</span>
+}
+
+templ DropdownChevron() {
+	@IconChevronRight(classDropdownChevronRight)
+}

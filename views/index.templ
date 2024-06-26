@@ -292,6 +292,163 @@ templ Index(title string) {
 					</div>
 				</div>
 			</section>
+			<section id="dropdown" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Dropdown</h3>
+				<div class="flex gap-3">
+					@ui.Dropdown() {
+						<button @click="dropdownOpen=true" { ui.Button(ui.Class("w-fit"))... }>
+							Dropdown Left
+						</button>
+						@ui.DropdownContent(ui.DropdownProps{
+							Side: "left",
+						}) {
+							<span { ui.DropdownLabel()... }>Account</span>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>
+								Settings
+								@ui.DropdownShortcut("⌘S")
+							</button>
+							<button { ui.DropdownItem()... }>
+								Keyboard Shortcut
+								@ui.DropdownShortcut("⌘K")
+							</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>Team</button>
+							<button { ui.DropdownItem()... }>
+								Invite Users
+								@ui.DropdownChevron()
+							</button>
+							<button { ui.DropdownItem()... }>
+								New Team
+								@ui.DropdownShortcut("⇧⌘+T")
+							</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>Github</button>
+							<button { ui.DropdownItem()... }>Support</button>
+							<button data-disabled { ui.DropdownItem()... }>API</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>
+								Logout
+								@ui.DropdownShortcut("⇧⌘Q")
+							</button>
+						}
+					}
+					@ui.Dropdown() {
+						<button @click="dropdownOpen=true" { ui.Button(ui.Class("w-fit"))... }>
+							Dropdown Right
+						</button>
+						@ui.DropdownContent(ui.DropdownProps{
+							Side: "right",
+						}) {
+							<span { ui.DropdownLabel()... }>Account</span>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>
+								Settings
+								@ui.DropdownShortcut("⌘S")
+							</button>
+							<button { ui.DropdownItem()... }>
+								Keyboard Shortcut
+								@ui.DropdownShortcut("⌘K")
+							</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>Team</button>
+							<button { ui.DropdownItem()... }>
+								Invite Users
+								@ui.DropdownChevron()
+							</button>
+							<button { ui.DropdownItem()... }>
+								New Team
+								@ui.DropdownShortcut("⇧⌘+T")
+							</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>Github</button>
+							<button { ui.DropdownItem()... }>Support</button>
+							<button data-disabled { ui.DropdownItem()... }>API</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>
+								Logout
+								@ui.DropdownShortcut("⇧⌘Q")
+							</button>
+						}
+					}
+					@ui.Dropdown() {
+						<button @click="dropdownOpen=true" { ui.Button(ui.Class("w-fit"))... }>
+							Dropdown Top Left
+						</button>
+						@ui.DropdownContent(ui.DropdownProps{
+							Side: "topleft",
+						}) {
+							<span { ui.DropdownLabel()... }>Account</span>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>
+								Settings
+								@ui.DropdownShortcut("⌘S")
+							</button>
+							<button { ui.DropdownItem()... }>
+								Keyboard Shortcut
+								@ui.DropdownShortcut("⌘K")
+							</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>Team</button>
+							<button { ui.DropdownItem()... }>
+								Invite Users
+								@ui.DropdownChevron()
+							</button>
+							<button { ui.DropdownItem()... }>
+								New Team
+								@ui.DropdownShortcut("⇧⌘+T")
+							</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>Github</button>
+							<button { ui.DropdownItem()... }>Support</button>
+							<button data-disabled { ui.DropdownItem()... }>API</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>
+								Logout
+								@ui.DropdownShortcut("⇧⌘Q")
+							</button>
+						}
+					}
+					@ui.Dropdown() {
+						<button @click="dropdownOpen=true" { ui.Button(ui.Class("w-fit"))... }>
+							Dropdown Top Right
+						</button>
+						@ui.DropdownContent(ui.DropdownProps{
+							Side: "topright",
+						}) {
+							<span { ui.DropdownLabel()... }>Account</span>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>
+								Settings
+								@ui.DropdownShortcut("⌘S")
+							</button>
+							<button { ui.DropdownItem()... }>
+								Keyboard Shortcut
+								@ui.DropdownShortcut("⌘K")
+							</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>Team</button>
+							<button { ui.DropdownItem()... }>
+								Invite Users
+								@ui.DropdownChevron()
+							</button>
+							<button { ui.DropdownItem()... }>
+								New Team
+								@ui.DropdownShortcut("⇧⌘+T")
+							</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>Github</button>
+							<button { ui.DropdownItem()... }>Support</button>
+							<button data-disabled { ui.DropdownItem()... }>API</button>
+							@ui.DropdownSeparator()
+							<button { ui.DropdownItem()... }>
+								Logout
+								@ui.DropdownShortcut("⇧⌘Q")
+							</button>
+						}
+					}
+				</div>
+			</section>
 		</div>
 	}
 }
