@@ -449,6 +449,35 @@ templ Index(title string) {
 					}
 				</div>
 			</section>
+			<section id="tooltio" class="container max-w-7xl space-y-3">
+				<h3 class="text-xl font-medium">Tooltip</h3>
+				<div class="flex gap-3">
+					@ui.Tooltip() {
+						<button { ui.Button(ui.Class("w-fit"))... }>
+							Tooltip Right
+						</button>
+						@ui.TooltipContent(ui.TooltipProps{Title: "Tooltip", Side: "right"})
+					}
+					@ui.Tooltip() {
+						<button { ui.Button(ui.Class("w-fit"))... }>
+							Tooltip Left
+						</button>
+						@ui.TooltipContent(ui.TooltipProps{Title: "Tooltip", Side: "left"})
+					}
+					@ui.Tooltip() {
+						<button { ui.Button(ui.Class("w-fit"))... }>
+							Tooltip Top
+						</button>
+						@ui.TooltipContent(ui.TooltipProps{Title: "Tooltip", Side: "top"})
+					}
+					@ui.Tooltip() {
+						<button { ui.Button(ui.Class("w-fit"))... }>
+							Tooltip Bottom
+						</button>
+						@ui.TooltipContent(ui.TooltipProps{Title: "Tooltip", Side: "bottom"})
+					}
+				</div>
+			</section>
 		</div>
 	}
 }
